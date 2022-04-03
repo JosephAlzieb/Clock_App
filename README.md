@@ -1,6 +1,6 @@
-# xxclock
+# Clock App
 
-A new Flutter project.
+A Flutter Clock project.
 
 ## Getting Started
 
