@@ -19,6 +19,17 @@ class _ClockState extends State<Clock> {
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
           ),
+          Container(
+            child: Container(
+              height: 15,
+              width: 15,
+              decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(50)
+              ),
+            ),
+            alignment: const Alignment(0,0),
+          ),
         ],
       ),
     );
