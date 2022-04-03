@@ -11,6 +11,26 @@ class Clock extends StatefulWidget {
 }
 
 class _ClockState extends State<Clock> {
+  double minutesAngle = 0;
+  double secondsAngle = 0;
+  double hoursAngle = 0;
+  Timer ? timer;
+
+  @override
+  void initState() {
+    super.initState();
+    timer = Timer.periodic(const Duration(milliseconds: 500), (timer) {
+      final now = DateTime.now();
+      print(now);
+      setState(() {
+        secondsAngle = (pi / 30) * now.second;
+        minutesAngle = pi / 30 * now.minute;
+        hoursAngle = (pi / 6 * now.hour) + (pi / 45 * minutesAngle);
+      });
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
