@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class Clock extends StatefulWidget {
@@ -24,40 +27,49 @@ class _ClockState extends State<Clock> {
             ),
           ),
           // Seconds
-          Container(
+          Transform.rotate(
             child: Container(
-              height: 140,
-              width: 2,
-              decoration: BoxDecoration(
-                color: Colors.blueAccent,
-                borderRadius: BorderRadius.circular(10)
+              child: Container(
+                height: 140,
+                width: 2,
+                decoration: BoxDecoration(
+                  color: Colors.blueAccent,
+                  borderRadius: BorderRadius.circular(10)
+                ),
               ),
+              alignment: const Alignment(0,-0.15),
             ),
-            alignment: const Alignment(0,-0.15),
+            angle: secondsAngle,
           ),
           //Minutes
-          Container(
+          Transform.rotate(
             child: Container(
-              height: 95,
-              width: 5,
-              decoration: BoxDecoration(
-                color: Colors.green,
-                borderRadius: BorderRadius.circular(10)
+              child: Container(
+                height: 95,
+                width: 5,
+                decoration: BoxDecoration(
+                  color: Colors.green,
+                  borderRadius: BorderRadius.circular(10)
+                ),
               ),
+              alignment: const Alignment(0,-0.15),
             ),
-            alignment: const Alignment(0,-0.15),
+            angle: minutesAngle,
           ),
           // Hours
-          Container(
+          Transform.rotate(
             child: Container(
-              height: 80,
-              width: 7    ,
-              decoration: BoxDecoration(
-                color: Colors.red,
-                borderRadius: BorderRadius.circular(10)
+              child: Container(
+                height: 80,
+                width: 7    ,
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(10)
+                ),
               ),
+              alignment: const Alignment(0,-0.1),
             ),
-            alignment: const Alignment(0,-0.1),
+            angle: hoursAngle,
           ),
           // Dot
           Container(
